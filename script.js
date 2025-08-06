@@ -50,39 +50,135 @@ const photoData = {
         photos: [
             {
                 id: 1,
-                title: 'Urban Fashion',
-                image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=800&h=600&fit=crop',
+                title: 'Fashion Portrait 1',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_944344d2b40df06c051b69fc14213c074c532667888c4e80.jpg',
                 category: 'fashion'
             },
             {
                 id: 2,
-                title: 'Portrait Session',
-                image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&h=600&fit=crop',
-                category: 'portrait'
+                title: 'Fashion Portrait 2',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_1cd03cb30abdd8e1e244a40b8e71857aa8a6ee8afff03437.jpg',
+                category: 'fashion'
             },
             {
                 id: 3,
-                title: 'Studio Fashion',
-                image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&h=600&fit=crop',
+                title: 'Fashion Portrait 3',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_6a7fbf3ce44c8b59989354a182b4c6d96380d7ca25426b36.jpg',
                 category: 'fashion'
             },
             {
                 id: 4,
-                title: 'Natural Light Portrait',
-                image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=600&fit=crop',
-                category: 'portrait'
+                title: 'Fashion Portrait 4',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_8cf5a03be373272daef411ae76f8467e2cb5766b583a5674.jpg',
+                category: 'fashion'
             },
             {
                 id: 5,
-                title: 'Fashion Editorial',
-                image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&h=600&fit=crop',
+                title: 'Fashion Portrait 5',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_61b449b4f2451e6fb92ebb8968e708f9beae25c2151308ae.jpg',
                 category: 'fashion'
             },
             {
                 id: 6,
-                title: 'Close-up Portrait',
-                image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=600&fit=crop',
-                category: 'portrait'
+                title: 'Fashion Portrait 6',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_3066eb7f5356dd8c3a898154fcb10c7d457e253d2a09f30d.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 7,
+                title: 'Fashion Portrait 7',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_a9366b113fb1367eee8f0f0f185a3ebb718e2f1a6648b739.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 8,
+                title: 'Fashion Portrait 8',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_b03094cd4da5d8dd0086b32c30b525d9de08b6b8606d272d.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 9,
+                title: 'Fashion Portrait 9',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_c36e1a617213dafe16a981f6531406b55cc857a64fea40ef.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 10,
+                title: 'Fashion Portrait 10',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_c783e4db4437f8a9547c79a9a9eb6639bf2e33b522246e16.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 11,
+                title: 'Fashion Portrait 11',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_db841f9a9f54b044ef98c490986087201b725ba6cbeab191.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 12,
+                title: 'Fashion Portrait 12',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_f05c81ff245d7e7fcdd33a63113f044fe557ad5c2af6b8ae.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 13,
+                title: 'Fashion Portrait 13',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_1c2dfe131a42e469df80551c108c8dad802782af4ee7c83d.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 14,
+                title: 'Fashion Portrait 14',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_7d8b7886854cf1367ba31eb38a72898d34d138d3f5421876.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 15,
+                title: 'Fashion Portrait 15',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_8f35d4498590fa846c51e88b9dd277b05ab4d76d32961d67.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 16,
+                title: 'Fashion Portrait 16',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_33ed129171a05c7eb33c8737f44107592dd4b6ca6fe6deb2.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 17,
+                title: 'Fashion Portrait 17',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_74d54a9ed6e335d638805a37df7022931cce397e7a757f7f.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 18,
+                title: 'Fashion Portrait 18',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_237617dc61e1ef364ca96af6926e597921502181fc55c85c.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 19,
+                title: 'Fashion Portrait 19',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_e970258d4fd715322a11ee9714ca7861e6a0e424c2d2e7b1.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 20,
+                title: 'Fashion Portrait 20',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_f25c65844541e960254e5d54bf833fc6e04996a9084e210f.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 21,
+                title: 'Fashion Portrait 21',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_7676a4ff4bfb3208aef225f01446250d7d0b5eecf22d760c.jpg',
+                category: 'fashion'
+            },
+            {
+                id: 22,
+                title: 'Fashion Portrait 22',
+                image: 'https://simp6.selti-delivery.ru/images3/3024x4032_84743f78897a2945f988dd9b1dbf8a5681439f5211745e59.jpg',
+                category: 'fashion'
             }
         ]
     },
@@ -464,7 +560,7 @@ function openPhotoModal(modelId) {
         // Render photos in modal with data attributes for lightbox
         modalGallery.innerHTML = modelData.photos.map((photo, index) => `
             <div class="modal-photo" data-photo-index="${index}">
-                <img src="${photo.image.replace('w=800&h=600', 'w=400&h=400')}" alt="${photo.title}">
+                <img src="${photo.image}" alt="${photo.title}">
             </div>
         `).join('');
         
