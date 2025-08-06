@@ -213,13 +213,17 @@ const photoData = {
     }
 };
 
-// Sample gallery data for main grid
+// Function to get photo count for a specific model
+function getPhotoCount(modelId) {
+    return photoData[modelId] ? photoData[modelId].photos.length : 0;
+}
+
+// Generate gallery data dynamically with actual photo counts
 const galleryData = [
     {
         id: 1,
         name: 'Sarah Johnson',
         specialty: 'Fashion & Portrait',
-        photoCount: 45,
         image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop',
         category: 'fashion',
         modelId: 'sarah-johnson'
@@ -228,7 +232,6 @@ const galleryData = [
         id: 2,
         name: 'Mike Chen',
         specialty: 'Street Photography',
-        photoCount: 32,
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop',
         category: 'street',
         modelId: 'mike-chen'
@@ -237,7 +240,6 @@ const galleryData = [
         id: 3,
         name: 'Emma Davis',
         specialty: 'Nature & Landscape',
-        photoCount: 28,
         image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop',
         category: 'nature',
         modelId: 'emma-davis'
@@ -246,7 +248,6 @@ const galleryData = [
         id: 4,
         name: 'Alex Wong',
         specialty: 'Portrait Photography',
-        photoCount: 38,
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop',
         category: 'portrait',
         modelId: 'alex-wong'
@@ -255,7 +256,6 @@ const galleryData = [
         id: 5,
         name: 'Lisa Park',
         specialty: 'Fashion Photography',
-        photoCount: 42,
         image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300&h=300&fit=crop',
         category: 'fashion',
         modelId: 'lisa-park'
@@ -264,15 +264,15 @@ const galleryData = [
         id: 6,
         name: 'David Kim',
         specialty: 'Street Photography',
-        photoCount: 25,
         image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=300&h=300&fit=crop',
         category: 'street',
         modelId: 'david-kim'
     }
 ];
 
-// Function to create photo card
+// Function to create photo card with dynamic photo count
 function createPhotoCard(photo) {
+    const photoCount = getPhotoCount(photo.modelId);
     return `
         <div class="photo-card scroll-reveal" data-category="${photo.category}" data-model="${photo.modelId}">
             <div class="photo-image">
@@ -282,7 +282,7 @@ function createPhotoCard(photo) {
                 <h3 class="photo-title">${photo.name}</h3>
                 <p class="photo-photographer">${photo.specialty}</p>
                 <div class="photo-details">
-                    <span class="photo-count-badge">${photo.photoCount} Photos</span>
+                    <span class="photo-count-badge">${photoCount} Photo${photoCount !== 1 ? 's' : ''}</span>
                     <button class="view-btn">View Gallery</button>
                 </div>
             </div>
@@ -498,6 +498,22 @@ document.addEventListener('click', (e) => {
         const modelId = photoCard.getAttribute('data-model');
         openPhotoModal(modelId);
     }
+});
+
+// Update featured cards with actual photo counts
+document.addEventListener('DOMContentLoaded', () => {
+    // Update featured cards photo counts
+    const featuredCards = document.querySelectorAll('.featured-card');
+    featuredCards.forEach(card => {
+        const modelId = card.getAttribute('data-model');
+        if (modelId) {
+            const photoCount = getPhotoCount(modelId);
+            const photoCountElement = card.querySelector('.photo-count');
+            if (photoCountElement) {
+                photoCountElement.textContent = `${photoCount} Photo${photoCount !== 1 ? 's' : ''}`;
+            }
+        }
+    });
 });
 
 // Scroll reveal animation
