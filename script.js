@@ -41,119 +41,249 @@ window.addEventListener('scroll', () => {
 const filterButtons = document.querySelectorAll('.filter-btn');
 const galleryGrid = document.getElementById('gallery-grid');
 
-// Sample NFT data
-const nftData = [
+// Sample photo data for different photographers/models
+const photoData = {
+    'sarah-johnson': {
+        name: 'Sarah Johnson',
+        specialty: 'Fashion & Portrait Photography',
+        photos: [
+            {
+                id: 1,
+                title: 'Urban Fashion',
+                image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop',
+                category: 'fashion'
+            },
+            {
+                id: 2,
+                title: 'Portrait Session',
+                image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
+                category: 'portrait'
+            },
+            {
+                id: 3,
+                title: 'Studio Fashion',
+                image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop',
+                category: 'fashion'
+            },
+            {
+                id: 4,
+                title: 'Natural Light Portrait',
+                image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop',
+                category: 'portrait'
+            },
+            {
+                id: 5,
+                title: 'Fashion Editorial',
+                image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=400&fit=crop',
+                category: 'fashion'
+            },
+            {
+                id: 6,
+                title: 'Close-up Portrait',
+                image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop',
+                category: 'portrait'
+            }
+        ]
+    },
+    'mike-chen': {
+        name: 'Mike Chen',
+        specialty: 'Street Photography',
+        photos: [
+            {
+                id: 1,
+                title: 'City Streets',
+                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+                category: 'street'
+            },
+            {
+                id: 2,
+                title: 'Urban Life',
+                image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=400&fit=crop',
+                category: 'street'
+            },
+            {
+                id: 3,
+                title: 'Street Art',
+                image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=400&fit=crop',
+                category: 'street'
+            },
+            {
+                id: 4,
+                title: 'City Architecture',
+                image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=400&fit=crop',
+                category: 'street'
+            }
+        ]
+    },
+    'emma-davis': {
+        name: 'Emma Davis',
+        specialty: 'Nature & Landscape',
+        photos: [
+            {
+                id: 1,
+                title: 'Mountain Landscape',
+                image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop',
+                category: 'nature'
+            },
+            {
+                id: 2,
+                title: 'Forest Path',
+                image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=400&fit=crop',
+                category: 'nature'
+            },
+            {
+                id: 3,
+                title: 'Ocean Waves',
+                image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=400&fit=crop',
+                category: 'nature'
+            },
+            {
+                id: 4,
+                title: 'Sunset Sky',
+                image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop',
+                category: 'nature'
+            }
+        ]
+    },
+    'alex-wong': {
+        name: 'Alex Wong',
+        specialty: 'Portrait Photography',
+        photos: [
+            {
+                id: 1,
+                title: 'Professional Portrait',
+                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+                category: 'portrait'
+            },
+            {
+                id: 2,
+                title: 'Creative Portrait',
+                image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
+                category: 'portrait'
+            },
+            {
+                id: 3,
+                title: 'Studio Portrait',
+                image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop',
+                category: 'portrait'
+            }
+        ]
+    },
+    'lisa-park': {
+        name: 'Lisa Park',
+        specialty: 'Fashion Photography',
+        photos: [
+            {
+                id: 1,
+                title: 'Fashion Editorial',
+                image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop',
+                category: 'fashion'
+            },
+            {
+                id: 2,
+                title: 'Runway Fashion',
+                image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=400&fit=crop',
+                category: 'fashion'
+            },
+            {
+                id: 3,
+                title: 'Street Fashion',
+                image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop',
+                category: 'fashion'
+            }
+        ]
+    },
+    'david-kim': {
+        name: 'David Kim',
+        specialty: 'Street Photography',
+        photos: [
+            {
+                id: 1,
+                title: 'Urban Scene',
+                image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=400&fit=crop',
+                category: 'street'
+            },
+            {
+                id: 2,
+                title: 'City Life',
+                image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=400&fit=crop',
+                category: 'street'
+            }
+        ]
+    }
+};
+
+// Sample gallery data for main grid
+const galleryData = [
     {
         id: 1,
-        title: "Cosmic Dreams",
-        artist: "Digital Artist",
-        price: "2.5 ETH",
-        image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300&h=300&fit=crop",
-        category: "art"
+        name: 'Sarah Johnson',
+        specialty: 'Fashion & Portrait',
+        photoCount: 45,
+        image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop',
+        category: 'fashion',
+        modelId: 'sarah-johnson'
     },
     {
         id: 2,
-        title: "Neon City",
-        artist: "Cyber Artist",
-        price: "1.8 ETH",
-        image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop",
-        category: "art"
+        name: 'Mike Chen',
+        specialty: 'Street Photography',
+        photoCount: 32,
+        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop',
+        category: 'street',
+        modelId: 'mike-chen'
     },
     {
         id: 3,
-        title: "Digital Harmony",
-        artist: "Sound Designer",
-        price: "3.2 ETH",
-        image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=300&h=300&fit=crop",
-        category: "music"
+        name: 'Emma Davis',
+        specialty: 'Nature & Landscape',
+        photoCount: 28,
+        image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop',
+        category: 'nature',
+        modelId: 'emma-davis'
     },
     {
         id: 4,
-        title: "Urban Photography",
-        artist: "Street Photographer",
-        price: "1.5 ETH",
-        image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=300&h=300&fit=crop",
-        category: "photography"
+        name: 'Alex Wong',
+        specialty: 'Portrait Photography',
+        photoCount: 38,
+        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop',
+        category: 'portrait',
+        modelId: 'alex-wong'
     },
     {
         id: 5,
-        title: "Gaming Character",
-        artist: "Game Designer",
-        price: "4.0 ETH",
-        image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=300&h=300&fit=crop",
-        category: "gaming"
+        name: 'Lisa Park',
+        specialty: 'Fashion Photography',
+        photoCount: 42,
+        image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300&h=300&fit=crop',
+        category: 'fashion',
+        modelId: 'lisa-park'
     },
     {
         id: 6,
-        title: "Abstract Mind",
-        artist: "Abstract Artist",
-        price: "2.8 ETH",
-        image: "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=300&h=300&fit=crop",
-        category: "art"
-    },
-    {
-        id: 7,
-        title: "Electronic Beats",
-        artist: "Music Producer",
-        price: "1.9 ETH",
-        image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop",
-        category: "music"
-    },
-    {
-        id: 8,
-        title: "Nature's Beauty",
-        artist: "Nature Photographer",
-        price: "2.1 ETH",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop",
-        category: "photography"
-    },
-    {
-        id: 9,
-        title: "Virtual World",
-        artist: "VR Developer",
-        price: "3.5 ETH",
-        image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=300&fit=crop",
-        category: "gaming"
-    },
-    {
-        id: 10,
-        title: "Digital Landscape",
-        artist: "Digital Artist",
-        price: "2.3 ETH",
-        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop",
-        category: "art"
-    },
-    {
-        id: 11,
-        title: "Symphony of Light",
-        artist: "Light Artist",
-        price: "2.7 ETH",
-        image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=300&fit=crop",
-        category: "art"
-    },
-    {
-        id: 12,
-        title: "Pixel Adventure",
-        artist: "Pixel Artist",
-        price: "1.6 ETH",
-        image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=300&h=300&fit=crop",
-        category: "gaming"
+        name: 'David Kim',
+        specialty: 'Street Photography',
+        photoCount: 25,
+        image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=300&h=300&fit=crop',
+        category: 'street',
+        modelId: 'david-kim'
     }
 ];
 
-// Function to create NFT card
-function createNFTCard(nft) {
+// Function to create photo card
+function createPhotoCard(photo) {
     return `
-        <div class="nft-card scroll-reveal" data-category="${nft.category}">
-            <div class="nft-image">
-                <img src="${nft.image}" alt="${nft.title}">
+        <div class="photo-card scroll-reveal" data-category="${photo.category}" data-model="${photo.modelId}">
+            <div class="photo-image">
+                <img src="${photo.image}" alt="${photo.name}">
             </div>
-            <div class="nft-info">
-                <h3 class="nft-title">${nft.title}</h3>
-                <p class="nft-artist">By ${nft.artist}</p>
-                <div class="nft-price">
-                    <span class="price-amount">${nft.price}</span>
-                    <button class="bid-btn">Place Bid</button>
+            <div class="photo-info">
+                <h3 class="photo-title">${photo.name}</h3>
+                <p class="photo-photographer">${photo.specialty}</p>
+                <div class="photo-details">
+                    <span class="photo-count-badge">${photo.photoCount} Photos</span>
+                    <button class="view-btn">View Gallery</button>
                 </div>
             </div>
         </div>
@@ -162,11 +292,11 @@ function createNFTCard(nft) {
 
 // Function to render gallery
 function renderGallery(filter = 'all') {
-    const filteredNFTs = filter === 'all' 
-        ? nftData 
-        : nftData.filter(nft => nft.category === filter);
+    const filteredPhotos = filter === 'all' 
+        ? galleryData 
+        : galleryData.filter(photo => photo.category === filter);
     
-    galleryGrid.innerHTML = filteredNFTs.map(nft => createNFTCard(nft)).join('');
+    galleryGrid.innerHTML = filteredPhotos.map(photo => createPhotoCard(photo)).join('');
     
     // Trigger scroll reveal animation
     setTimeout(() => {
@@ -191,6 +321,80 @@ filterButtons.forEach(button => {
         const filter = button.getAttribute('data-filter');
         renderGallery(filter);
     });
+});
+
+// Modal functionality
+const modal = document.getElementById('photo-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalSubtitle = document.getElementById('modal-subtitle');
+const modalGallery = document.getElementById('modal-gallery');
+const closeBtn = document.querySelector('.close');
+
+// Function to open modal with photo collection
+function openPhotoModal(modelId) {
+    const modelData = photoData[modelId];
+    if (modelData) {
+        modalTitle.textContent = modelData.name;
+        modalSubtitle.textContent = modelData.specialty;
+        
+        // Render photos in modal
+        modalGallery.innerHTML = modelData.photos.map(photo => `
+            <div class="modal-photo">
+                <img src="${photo.image}" alt="${photo.title}">
+            </div>
+        `).join('');
+        
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Close modal
+function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Event listeners for modal
+closeBtn.addEventListener('click', closeModal);
+
+// Close modal when clicking outside
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        closeModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'block') {
+        closeModal();
+    }
+});
+
+// Event delegation for photo cards and featured cards
+document.addEventListener('click', (e) => {
+    // Handle gallery photo cards
+    if (e.target.closest('.photo-card')) {
+        const photoCard = e.target.closest('.photo-card');
+        const modelId = photoCard.getAttribute('data-model');
+        openPhotoModal(modelId);
+    }
+    
+    // Handle featured cards
+    if (e.target.closest('.featured-card')) {
+        const featuredCard = e.target.closest('.featured-card');
+        const modelId = featuredCard.getAttribute('data-model');
+        openPhotoModal(modelId);
+    }
+    
+    // Handle view buttons
+    if (e.target.classList.contains('view-btn')) {
+        e.stopPropagation();
+        const photoCard = e.target.closest('.photo-card');
+        const modelId = photoCard.getAttribute('data-model');
+        openPhotoModal(modelId);
+    }
 });
 
 // Scroll reveal animation
@@ -221,7 +425,6 @@ if (contactForm) {
         e.preventDefault();
         
         // Get form data
-        const formData = new FormData(contactForm);
         const name = contactForm.querySelector('input[type="text"]').value;
         const email = contactForm.querySelector('input[type="email"]').value;
         const message = contactForm.querySelector('textarea').value;
@@ -260,20 +463,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Connect Wallet button
-    const connectBtn = document.querySelector('.btn-secondary');
-    if (connectBtn && connectBtn.textContent.includes('Connect')) {
-        connectBtn.addEventListener('click', () => {
-            alert('Wallet connection feature coming soon!');
+    // View Collections button
+    const collectionsBtn = document.querySelector('.btn-secondary');
+    if (collectionsBtn && collectionsBtn.textContent.includes('Collections')) {
+        collectionsBtn.addEventListener('click', () => {
+            document.querySelector('#gallery').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         });
     }
-    
-    // Bid buttons
-    document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('bid-btn')) {
-            alert('Bidding feature coming soon!');
-        }
-    });
 });
 
 // Add loading animation
@@ -306,7 +505,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Add click effect to buttons
-    const buttons = document.querySelectorAll('.btn, .filter-btn, .bid-btn');
+    const buttons = document.querySelectorAll('.btn, .filter-btn, .view-btn');
     buttons.forEach(button => {
         button.addEventListener('click', function() {
             this.style.transform = 'scale(0.95)';
@@ -336,10 +535,10 @@ loadingScreen.style.cssText = `
 loadingScreen.innerHTML = `
     <div style="text-align: center; color: #fff;">
         <div style="font-size: 2rem; margin-bottom: 1rem;">
-            <i class="fas fa-cube" style="color: #6366f1;"></i>
+            <i class="fas fa-camera" style="color: #6366f1;"></i>
         </div>
-        <div style="font-size: 1.5rem; font-weight: 600;">NFT Gallery</div>
-        <div style="margin-top: 1rem; color: #a1a1aa;">Loading amazing artworks...</div>
+        <div style="font-size: 1.5rem; font-weight: 600;">Photo Gallery</div>
+        <div style="margin-top: 1rem; color: #a1a1aa;">Loading amazing photos...</div>
     </div>
 `;
 

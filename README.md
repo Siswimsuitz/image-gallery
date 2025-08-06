@@ -1,27 +1,28 @@
-# NFT Gallery - Community Website
+# Photo Gallery - Models & Photographers
 
-A modern, responsive NFT gallery website built with HTML, CSS, and JavaScript. This project showcases a beautiful interface for displaying and exploring NFT artworks with a focus on community and user experience.
+A modern, responsive photo gallery website built with HTML, CSS, and JavaScript. This project showcases photo collections from talented photographers and models with an interactive gallery experience.
 
 ## 🌟 Features
 
 ### Design & UI
-- **Modern Dark Theme**: Sleek dark design with gradient accents
+- **Modern Dark Theme**: Sleek dark design with purple gradient accents
 - **Responsive Design**: Fully responsive across all devices
 - **Smooth Animations**: CSS animations and transitions for enhanced UX
 - **Interactive Elements**: Hover effects, scroll animations, and micro-interactions
 
 ### Functionality
 - **Navigation**: Fixed navigation with smooth scrolling
-- **Gallery Filtering**: Filter NFTs by category (Art, Music, Photography, Gaming)
-- **Dynamic Content**: JavaScript-powered NFT card generation
+- **Gallery Filtering**: Filter by category (Fashion, Portrait, Street, Nature)
+- **Modal Photo Collections**: Click on any photographer/model to view their full photo collection
+- **Dynamic Content**: JavaScript-powered photo card generation
 - **Contact Form**: Interactive contact form with validation
 - **Mobile Menu**: Responsive mobile navigation
 
 ### Sections
 1. **Hero Section**: Eye-catching introduction with statistics
-2. **Featured Collections**: Highlighted NFT artworks
-3. **Gallery**: Filterable NFT grid with detailed cards
-4. **About**: Community information and features
+2. **Featured Collections**: Highlighted photographer/model cards
+3. **Gallery**: Filterable photo grid with detailed cards
+4. **About**: Platform information and features
 5. **Contact**: Contact form and social links
 6. **Footer**: Additional links and information
 
@@ -61,7 +62,7 @@ A modern, responsive NFT gallery website built with HTML, CSS, and JavaScript. T
 - **Scroll Reveal**: Elements animate in as they come into view
 - **Hover Effects**: Cards and buttons have interactive hover states
 - **Loading Screen**: Smooth loading animation
-- **Parallax**: Subtle parallax effect on hero section
+- **Modal Transitions**: Smooth modal open/close animations
 
 ## 📱 Responsive Design
 
@@ -72,22 +73,42 @@ The website is fully responsive and optimized for:
 
 ## 🔧 Customization
 
-### Adding New NFTs
-To add new NFTs to the gallery, modify the `nftData` array in `script.js`:
+### Adding New Photographers/Models
+To add new photographers or models, modify the `photoData` object in `script.js`:
+
+```javascript
+'new-photographer': {
+    name: 'Photographer Name',
+    specialty: 'Photography Specialty',
+    photos: [
+        {
+            id: 1,
+            title: 'Photo Title',
+            image: 'image-url',
+            category: 'fashion' // or 'portrait', 'street', 'nature'
+        }
+        // ... more photos
+    ]
+}
+```
+
+### Adding to Main Gallery
+Add entries to the `galleryData` array in `script.js`:
 
 ```javascript
 {
-    id: 13,
-    title: "Your NFT Title",
-    artist: "Artist Name",
-    price: "X.X ETH",
-    image: "image-url",
-    category: "art" // or "music", "photography", "gaming"
+    id: 7,
+    name: 'Photographer Name',
+    specialty: 'Photography Specialty',
+    photoCount: 30,
+    image: 'thumbnail-image-url',
+    category: 'fashion',
+    modelId: 'photographer-id'
 }
 ```
 
 ### Styling Changes
-- Modify colors in `style.css` variables
+- Modify colors in `style.css`
 - Adjust animations and transitions
 - Customize layout grids and spacing
 
@@ -95,6 +116,24 @@ To add new NFTs to the gallery, modify the `nftData` array in `script.js`:
 - Update text content in `index.html`
 - Modify hero statistics
 - Change featured collections
+
+## 🖼️ Photo Gallery Features
+
+### Modal Gallery
+- Click on any photographer/model card to open their photo collection
+- Modal displays all photos in a responsive grid
+- Close with X button, clicking outside, or pressing Escape
+- Smooth animations and transitions
+
+### Filtering System
+- Filter by photography categories
+- Dynamic content loading
+- Smooth transitions between filters
+
+### Interactive Elements
+- Hover effects on all cards
+- Click animations on buttons
+- Smooth scrolling navigation
 
 ## 🌐 Browser Support
 
@@ -118,4 +157,4 @@ For support or questions, please open an issue in the project repository.
 
 ---
 
-**Built with ❤️ for the NFT community**
+**Built with ❤️ for photographers and models**

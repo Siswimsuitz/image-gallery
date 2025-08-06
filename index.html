@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFT Gallery - Community</title>
+    <title>Photo Gallery - Models & Photographers</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,8 +13,8 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-cube"></i>
-                <span>NFT Gallery</span>
+                <i class="fas fa-camera"></i>
+                <span>Photo Gallery</span>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
@@ -34,67 +34,67 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Discover Amazing <span class="gradient-text">NFT Art</span></h1>
-                <p class="hero-description">Explore a curated collection of unique digital artworks from talented artists around the world.</p>
+                <h1 class="hero-title">Discover Amazing <span class="gradient-text">Photography</span></h1>
+                <p class="hero-description">Explore stunning photo collections from talented photographers and models around the world.</p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary">Explore Gallery</button>
-                    <button class="btn btn-secondary">Connect Wallet</button>
+                    <button class="btn btn-secondary">View Collections</button>
                 </div>
             </div>
             <div class="hero-stats">
                 <div class="stat-item">
-                    <h3>10K+</h3>
-                    <p>NFTs Created</p>
+                    <h3>50+</h3>
+                    <p>Photographers</p>
                 </div>
                 <div class="stat-item">
-                    <h3>500+</h3>
-                    <p>Artists</p>
+                    <h3>1000+</h3>
+                    <p>Photos</p>
                 </div>
                 <div class="stat-item">
-                    <h3>50K+</h3>
-                    <p>Community</p>
+                    <h3>25+</h3>
+                    <p>Collections</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured NFTs -->
+    <!-- Featured Collections -->
     <section class="featured">
         <div class="container">
             <h2 class="section-title">Featured Collections</h2>
             <div class="featured-grid">
-                <div class="featured-card large">
+                <div class="featured-card large" data-model="sarah-johnson">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=400&fit=crop" alt="Abstract Art">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=600&h=400&fit=crop" alt="Sarah Johnson">
                         <div class="card-overlay">
                             <div class="card-info">
-                                <h3>Abstract Dreams</h3>
-                                <p>By Artist Name</p>
-                                <span class="price">2.5 ETH</span>
+                                <h3>Sarah Johnson</h3>
+                                <p>Fashion & Portrait Photography</p>
+                                <span class="photo-count">45 Photos</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="featured-card">
+                <div class="featured-card" data-model="mike-chen">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=300&h=300&fit=crop" alt="Digital Art">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop" alt="Mike Chen">
                         <div class="card-overlay">
                             <div class="card-info">
-                                <h3>Digital Harmony</h3>
-                                <p>By Artist Name</p>
-                                <span class="price">1.8 ETH</span>
+                                <h3>Mike Chen</h3>
+                                <p>Street Photography</p>
+                                <span class="photo-count">32 Photos</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="featured-card">
+                <div class="featured-card" data-model="emma-davis">
                     <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop" alt="Cyberpunk">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop" alt="Emma Davis">
                         <div class="card-overlay">
                             <div class="card-info">
-                                <h3>Cyberpunk City</h3>
-                                <p>By Artist Name</p>
-                                <span class="price">3.2 ETH</span>
+                                <h3>Emma Davis</h3>
+                                <p>Nature & Landscape</p>
+                                <span class="photo-count">28 Photos</span>
                             </div>
                         </div>
                     </div>
@@ -106,16 +106,16 @@
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <div class="container">
-            <h2 class="section-title">NFT Gallery</h2>
+            <h2 class="section-title">Photo Collections</h2>
             <div class="gallery-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="art">Art</button>
-                <button class="filter-btn" data-filter="music">Music</button>
-                <button class="filter-btn" data-filter="photography">Photography</button>
-                <button class="filter-btn" data-filter="gaming">Gaming</button>
+                <button class="filter-btn" data-filter="fashion">Fashion</button>
+                <button class="filter-btn" data-filter="portrait">Portrait</button>
+                <button class="filter-btn" data-filter="street">Street</button>
+                <button class="filter-btn" data-filter="nature">Nature</button>
             </div>
             <div class="gallery-grid" id="gallery-grid">
-                <!-- NFT cards will be dynamically generated -->
+                <!-- Photo cards will be dynamically generated -->
             </div>
         </div>
     </section>
@@ -125,13 +125,13 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About Our Community</h2>
-                    <p>We're building the future of digital art ownership. Our platform connects artists with collectors, creating a vibrant ecosystem for NFT trading and discovery.</p>
+                    <h2>About Our Platform</h2>
+                    <p>We showcase the work of talented photographers and models, providing a platform for creative expression and visual storytelling. Each collection tells a unique story through the lens of passionate artists.</p>
                     <div class="about-features">
                         <div class="feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <h3>Secure</h3>
-                            <p>Blockchain-powered security</p>
+                            <i class="fas fa-camera"></i>
+                            <h3>Quality</h3>
+                            <p>High-resolution photography</p>
                         </div>
                         <div class="feature">
                             <i class="fas fa-users"></i>
@@ -139,14 +139,14 @@
                             <p>Global artist network</p>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-palette"></i>
-                            <h3>Creative</h3>
-                            <p>Unique digital artworks</p>
+                            <i class="fas fa-heart"></i>
+                            <h3>Passion</h3>
+                            <p>Dedicated photographers</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=500&h=400&fit=crop" alt="Community">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&h=400&fit=crop" alt="Photography">
                 </div>
             </div>
         </div>
@@ -159,12 +159,12 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <h3>Join Our Community</h3>
-                    <p>Connect with artists and collectors from around the world.</p>
+                    <p>Connect with photographers and models from around the world.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 <form class="contact-form">
@@ -183,10 +183,10 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <i class="fas fa-cube"></i>
-                        <span>NFT Gallery</span>
+                        <i class="fas fa-camera"></i>
+                        <span>Photo Gallery</span>
                     </div>
-                    <p>Building the future of digital art ownership.</p>
+                    <p>Showcasing the world's best photography.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -208,10 +208,24 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 NFT Gallery. All rights reserved.</p>
+                <p>&copy; 2024 Photo Gallery. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Modal for Photo Gallery -->
+    <div id="photo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2 id="modal-title">Photo Collection</h2>
+                <p id="modal-subtitle">Photographer</p>
+            </div>
+            <div class="modal-gallery" id="modal-gallery">
+                <!-- Photos will be loaded here -->
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
