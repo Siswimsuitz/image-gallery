@@ -46,6 +46,7 @@ const photoData = {
     'sarah-johnson': {
         name: 'Sarah Johnson',
         specialty: 'Fashion & Portrait Photography',
+        instagram: 'sarahjohnson_photography',
         photos: [
             {
                 id: 1,
@@ -88,6 +89,7 @@ const photoData = {
     'mike-chen': {
         name: 'Mike Chen',
         specialty: 'Street Photography',
+        instagram: 'mikechen_street',
         photos: [
             {
                 id: 1,
@@ -118,6 +120,7 @@ const photoData = {
     'emma-davis': {
         name: 'Emma Davis',
         specialty: 'Nature & Landscape',
+        instagram: 'emmadavis_nature',
         photos: [
             {
                 id: 1,
@@ -148,6 +151,7 @@ const photoData = {
     'alex-wong': {
         name: 'Alex Wong',
         specialty: 'Portrait Photography',
+        instagram: 'alexwong_portraits',
         photos: [
             {
                 id: 1,
@@ -172,6 +176,7 @@ const photoData = {
     'lisa-park': {
         name: 'Lisa Park',
         specialty: 'Fashion Photography',
+        instagram: 'lisapark_fashion',
         photos: [
             {
                 id: 1,
@@ -196,6 +201,7 @@ const photoData = {
     'david-kim': {
         name: 'David Kim',
         specialty: 'Street Photography',
+        instagram: 'davidkim_urban',
         photos: [
             {
                 id: 1,
@@ -216,6 +222,11 @@ const photoData = {
 // Function to get photo count for a specific model
 function getPhotoCount(modelId) {
     return photoData[modelId] ? photoData[modelId].photos.length : 0;
+}
+
+// Function to get Instagram handle for a specific model
+function getInstagramHandle(modelId) {
+    return photoData[modelId] ? photoData[modelId].instagram : null;
 }
 
 // Generate gallery data dynamically with actual photo counts
@@ -270,9 +281,11 @@ const galleryData = [
     }
 ];
 
-// Function to create photo card with dynamic photo count
+// Function to create photo card with dynamic photo count and Instagram button
 function createPhotoCard(photo) {
     const photoCount = getPhotoCount(photo.modelId);
+    const instagramHandle = getInstagramHandle(photo.modelId);
+    
     return `
         <div class="photo-card scroll-reveal" data-category="${photo.category}" data-model="${photo.modelId}">
             <div class="photo-image">
@@ -285,6 +298,14 @@ function createPhotoCard(photo) {
                     <span class="photo-count-badge">${photoCount} Photo${photoCount !== 1 ? 's' : ''}</span>
                     <button class="view-btn">View Gallery</button>
                 </div>
+                ${instagramHandle ? `
+                    <div class="instagram-section">
+                        <a href="https://www.instagram.com/${instagramHandle}" target="_blank" class="instagram-btn">
+                            <i class="fab fa-instagram"></i>
+                            <span>@${instagramHandle}</span>
+                        </a>
+                    </div>
+                ` : ''}
             </div>
         </div>
     `;
@@ -498,9 +519,15 @@ document.addEventListener('click', (e) => {
         const modelId = photoCard.getAttribute('data-model');
         openPhotoModal(modelId);
     }
+    
+    // Handle Instagram buttons
+    if (e.target.closest('.instagram-btn')) {
+        e.stopPropagation();
+        // Let the link open naturally in new tab
+    }
 });
 
-// Update featured cards with actual photo counts
+// Update featured cards with actual photo counts and Instagram buttons
 document.addEventListener('DOMContentLoaded', () => {
     // Update featured cards photo counts
     const featuredCards = document.querySelectorAll('.featured-card');
@@ -508,9 +535,28 @@ document.addEventListener('DOMContentLoaded', () => {
         const modelId = card.getAttribute('data-model');
         if (modelId) {
             const photoCount = getPhotoCount(modelId);
+            const instagramHandle = getInstagramHandle(modelId);
+            
+            // Update photo count
             const photoCountElement = card.querySelector('.photo-count');
             if (photoCountElement) {
                 photoCountElement.textContent = `${photoCount} Photo${photoCount !== 1 ? 's' : ''}`;
+            }
+            
+            // Add Instagram button if handle exists
+            if (instagramHandle) {
+                const cardInfo = card.querySelector('.card-info');
+                if (cardInfo && !card.querySelector('.instagram-btn')) {
+                    const instagramSection = document.createElement('div');
+                    instagramSection.className = 'instagram-section';
+                    instagramSection.innerHTML = `
+                        <a href="https://www.instagram.com/${instagramHandle}" target="_blank" class="instagram-btn">
+                            <i class="fab fa-instagram"></i>
+                            <span>@${instagramHandle}</span>
+                        </a>
+                    `;
+                    cardInfo.appendChild(instagramSection);
+                }
             }
         }
     });
