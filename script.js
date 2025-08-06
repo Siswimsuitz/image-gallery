@@ -594,6 +594,18 @@ window.addEventListener('click', (e) => {
 
 // Event delegation for photo cards and featured cards
 document.addEventListener('click', (e) => {
+    // Handle Instagram buttons first (to prevent gallery opening)
+    if (e.target.closest('.instagram-btn')) {
+        e.stopPropagation();
+        e.preventDefault();
+        // Let the link open naturally in new tab
+        const link = e.target.closest('.instagram-btn');
+        if (link.href) {
+            window.open(link.href, '_blank');
+        }
+        return;
+    }
+    
     // Handle gallery photo cards
     if (e.target.closest('.photo-card')) {
         const photoCard = e.target.closest('.photo-card');
@@ -614,12 +626,6 @@ document.addEventListener('click', (e) => {
         const photoCard = e.target.closest('.photo-card');
         const modelId = photoCard.getAttribute('data-model');
         openPhotoModal(modelId);
-    }
-    
-    // Handle Instagram buttons
-    if (e.target.closest('.instagram-btn')) {
-        e.stopPropagation();
-        // Let the link open naturally in new tab
     }
 });
 
