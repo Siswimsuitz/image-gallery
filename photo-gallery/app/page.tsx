@@ -1,17 +1,34 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-
-const photos = [
-  // Placeholder images, replace with Supabase URLs later
-  "/gallery1.jpg",
-  "/gallery2.jpg",
-  "/gallery3.jpg",
-  "/gallery4.jpg",
-  "/gallery5.jpg",
-  "/gallery6.jpg",
-];
+import { useEffect, useState } from "react";
+import { supabase } from "../utils/supabaseClient";
 
 export default function Home() {
+  const [photos, setPhotos] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchPhotos() {
+      // List all images in the 'photos' bucket
+      const { data, error } = await supabase.storage.from("photos").list("", { limit: 100 });
+      if (error) {
+        setLoading(false);
+        return;
+      }
+      if (data) {
+        // Get public URLs for each image
+        const urls = data
+          .filter((item) => item.name.match(/\.(jpg|jpeg|png|webp)$/i))
+          .map((item) =>
+            supabase.storage.from("photos").getPublicUrl(item.name).data.publicUrl
+          );
+        setPhotos(urls);
+      }
+      setLoading(false);
+    }
+    fetchPhotos();
+  }, []);
+
   return (
     <div className={styles.page}>
       <header className={styles.header}>
@@ -30,21 +47,29 @@ export default function Home() {
       </section>
       <section id="gallery" className={styles.gallerySection}>
         <h3 className={styles.sectionTitle}>Gallery</h3>
-        <div className={styles.galleryGrid}>
-          {photos.map((src, i) => (
-            <div className={styles.galleryItem} key={i}>
-              <Image
-                src={src}
-                alt={`Gallery photo ${i + 1}`}
-                width={400}
-                height={500}
-                className={styles.galleryImage}
-                placeholder="blur"
-                blurDataURL="/placeholder.png"
-              />
-            </div>
-          ))}
-        </div>
+        {loading ? (
+          <div style={{ textAlign: "center", padding: "40px 0" }}>Loading photos...</div>
+        ) : (
+          <div className={styles.galleryGrid}>
+            {photos.length === 0 ? (
+              <div style={{ gridColumn: "1/-1", textAlign: "center" }}>No photos found.</div>
+            ) : (
+              photos.map((src, i) => (
+                <div className={styles.galleryItem} key={i}>
+                  <Image
+                    src={src}
+                    alt={`Gallery photo ${i + 1}`}
+                    width={400}
+                    height={500}
+                    className={styles.galleryImage}
+                    placeholder="blur"
+                    blurDataURL="/placeholder.png"
+                  />
+                </div>
+              ))
+            )}
+          </div>
+        )}
       </section>
       <section id="about" className={styles.aboutSection}>
         <h3 className={styles.sectionTitle}>About</h3>
