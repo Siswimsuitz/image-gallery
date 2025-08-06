@@ -50,37 +50,37 @@ const photoData = {
             {
                 id: 1,
                 title: 'Urban Fashion',
-                image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=800&h=600&fit=crop',
                 category: 'fashion'
             },
             {
                 id: 2,
                 title: 'Portrait Session',
-                image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&h=600&fit=crop',
                 category: 'portrait'
             },
             {
                 id: 3,
                 title: 'Studio Fashion',
-                image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&h=600&fit=crop',
                 category: 'fashion'
             },
             {
                 id: 4,
                 title: 'Natural Light Portrait',
-                image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=600&fit=crop',
                 category: 'portrait'
             },
             {
                 id: 5,
                 title: 'Fashion Editorial',
-                image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&h=600&fit=crop',
                 category: 'fashion'
             },
             {
                 id: 6,
                 title: 'Close-up Portrait',
-                image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&h=600&fit=crop',
                 category: 'portrait'
             }
         ]
@@ -92,25 +92,25 @@ const photoData = {
             {
                 id: 1,
                 title: 'City Streets',
-                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
                 category: 'street'
             },
             {
                 id: 2,
                 title: 'Urban Life',
-                image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop',
                 category: 'street'
             },
             {
                 id: 3,
                 title: 'Street Art',
-                image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=600&fit=crop',
                 category: 'street'
             },
             {
                 id: 4,
                 title: 'City Architecture',
-                image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop',
                 category: 'street'
             }
         ]
@@ -122,25 +122,25 @@ const photoData = {
             {
                 id: 1,
                 title: 'Mountain Landscape',
-                image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
                 category: 'nature'
             },
             {
                 id: 2,
                 title: 'Forest Path',
-                image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop',
                 category: 'nature'
             },
             {
                 id: 3,
                 title: 'Ocean Waves',
-                image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop',
                 category: 'nature'
             },
             {
                 id: 4,
                 title: 'Sunset Sky',
-                image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
                 category: 'nature'
             }
         ]
@@ -152,19 +152,19 @@ const photoData = {
             {
                 id: 1,
                 title: 'Professional Portrait',
-                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
                 category: 'portrait'
             },
             {
                 id: 2,
                 title: 'Creative Portrait',
-                image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&h=600&fit=crop',
                 category: 'portrait'
             },
             {
                 id: 3,
                 title: 'Studio Portrait',
-                image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=600&fit=crop',
                 category: 'portrait'
             }
         ]
@@ -176,19 +176,19 @@ const photoData = {
             {
                 id: 1,
                 title: 'Fashion Editorial',
-                image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&h=600&fit=crop',
                 category: 'fashion'
             },
             {
                 id: 2,
                 title: 'Runway Fashion',
-                image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&h=600&fit=crop',
                 category: 'fashion'
             },
             {
                 id: 3,
                 title: 'Street Fashion',
-                image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=800&h=600&fit=crop',
                 category: 'fashion'
             }
         ]
@@ -200,13 +200,13 @@ const photoData = {
             {
                 id: 1,
                 title: 'Urban Scene',
-                image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&h=600&fit=crop',
                 category: 'street'
             },
             {
                 id: 2,
                 title: 'City Life',
-                image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=400&fit=crop',
+                image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&h=600&fit=crop',
                 category: 'street'
             }
         ]
@@ -330,6 +330,109 @@ const modalSubtitle = document.getElementById('modal-subtitle');
 const modalGallery = document.getElementById('modal-gallery');
 const closeBtn = document.querySelector('.close');
 
+// Lightbox functionality
+let currentPhotos = [];
+let currentPhotoIndex = 0;
+
+// Create lightbox element
+const lightbox = document.createElement('div');
+lightbox.className = 'lightbox';
+lightbox.innerHTML = `
+    <div class="lightbox-content">
+        <span class="lightbox-close">&times;</span>
+        <button class="lightbox-nav lightbox-prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-image-container">
+            <img class="lightbox-image" src="" alt="">
+        </div>
+        <div class="lightbox-info">
+            <h3 class="lightbox-title"></h3>
+            <p class="lightbox-counter"></p>
+        </div>
+    </div>
+`;
+document.body.appendChild(lightbox);
+
+// Function to open lightbox
+function openLightbox(photos, index) {
+    currentPhotos = photos;
+    currentPhotoIndex = index;
+    
+    const photo = photos[index];
+    const lightboxImage = lightbox.querySelector('.lightbox-image');
+    const lightboxTitle = lightbox.querySelector('.lightbox-title');
+    const lightboxCounter = lightbox.querySelector('.lightbox-counter');
+    
+    lightboxImage.src = photo.image;
+    lightboxImage.alt = photo.title;
+    lightboxTitle.textContent = photo.title;
+    lightboxCounter.textContent = `${index + 1} / ${photos.length}`;
+    
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+// Function to close lightbox
+function closeLightbox() {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Function to navigate lightbox
+function navigateLightbox(direction) {
+    if (direction === 'next') {
+        currentPhotoIndex = (currentPhotoIndex + 1) % currentPhotos.length;
+    } else {
+        currentPhotoIndex = (currentPhotoIndex - 1 + currentPhotos.length) % currentPhotos.length;
+    }
+    
+    const photo = currentPhotos[currentPhotoIndex];
+    const lightboxImage = lightbox.querySelector('.lightbox-image');
+    const lightboxTitle = lightbox.querySelector('.lightbox-title');
+    const lightboxCounter = lightbox.querySelector('.lightbox-counter');
+    
+    lightboxImage.src = photo.image;
+    lightboxImage.alt = photo.title;
+    lightboxTitle.textContent = photo.title;
+    lightboxCounter.textContent = `${currentPhotoIndex + 1} / ${currentPhotos.length}`;
+}
+
+// Lightbox event listeners
+lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+lightbox.querySelector('.lightbox-prev').addEventListener('click', () => navigateLightbox('prev'));
+lightbox.querySelector('.lightbox-next').addEventListener('click', () => navigateLightbox('next'));
+
+// Close lightbox when clicking outside
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        if (lightbox.style.display === 'flex') {
+            closeLightbox();
+        } else if (modal.style.display === 'block') {
+            closeModal();
+        }
+    }
+    
+    // Navigate lightbox with arrow keys
+    if (lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') {
+            navigateLightbox('prev');
+        } else if (e.key === 'ArrowRight') {
+            navigateLightbox('next');
+        }
+    }
+});
+
 // Function to open modal with photo collection
 function openPhotoModal(modelId) {
     const modelData = photoData[modelId];
@@ -337,15 +440,22 @@ function openPhotoModal(modelId) {
         modalTitle.textContent = modelData.name;
         modalSubtitle.textContent = modelData.specialty;
         
-        // Render photos in modal
-        modalGallery.innerHTML = modelData.photos.map(photo => `
-            <div class="modal-photo">
-                <img src="${photo.image}" alt="${photo.title}">
+        // Render photos in modal with data attributes for lightbox
+        modalGallery.innerHTML = modelData.photos.map((photo, index) => `
+            <div class="modal-photo" data-photo-index="${index}">
+                <img src="${photo.image.replace('w=800&h=600', 'w=400&h=400')}" alt="${photo.title}">
             </div>
         `).join('');
         
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
+        
+        // Add click event to modal photos for lightbox
+        modalGallery.querySelectorAll('.modal-photo').forEach((photoElement, index) => {
+            photoElement.addEventListener('click', () => {
+                openLightbox(modelData.photos, index);
+            });
+        });
     }
 }
 
@@ -361,13 +471,6 @@ closeBtn.addEventListener('click', closeModal);
 // Close modal when clicking outside
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
-        closeModal();
-    }
-});
-
-// Close modal with Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.style.display === 'block') {
         closeModal();
     }
 });
